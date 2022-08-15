@@ -1,0 +1,92 @@
+.sky {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+}
+
+.stars {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-repeat: repeat;
+    background-size: 100vh;
+}
+
+.layer {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-size: auto 100vh;
+    background-image: var(--backgroundImage);
+    background-blend-mode: multiply;
+    background-repeat: repeat-x;
+
+
+    mask-image: var(--backgroundImage);
+    mask-mode: alpha;
+    mask-size: auto 100vh;
+    mask-repeat: repeat-x;
+
+   
+    
+}
+
+.circleContainer {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.page {
+    width: 100vw;
+    height: 100%;
+    background-color: rgb(20,25,31);
+}
+
+.title {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    color: white;
+    font-size: 3em;
+    font-weight: bold;
+    z-index: 100;
+}
+
+.title h1, .title h2 {
+    color: white;
+    font-weight: bold;
+}
+
+.bouncingLetters span {
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    color: white;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.bouncingLetters span:hover {
+    color: rgb(69, 139, 231);
+    transition: 0.3s;
+}
+
+@media screen and (max-width: 1000px) {
+    .title {
+        width: 100%;
+        top: 0;
+        left: 0;
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    .title h1, .title h2 {
+        margin: auto;
+    }
+}

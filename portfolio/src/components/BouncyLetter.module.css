@@ -1,0 +1,26 @@
+.bounce{
+    animation-name: bounce;
+    color: rgb(0, 183, 255) !important;
+    transition: 0.3s;
+}
+
+@keyframes bounce {
+    20%,
+    50%,
+    80%,
+    to {
+        transform: scale(1, 1);
+    }
+    40% {
+        transform: scale(1.75, 0.65);
+    }
+    45% {
+        transform: scale(1.75, 0.65);
+    }
+    70% {
+        transform: scale(1.25, 0.75);
+    }
+    90% {
+        transform: scale(1.15, 0.85);
+    }
+}
