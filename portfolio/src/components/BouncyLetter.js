@@ -16,7 +16,7 @@ function BouncyText(props) {
             onClick={() => toggleBounce(true)}
             onAnimationEnd={() => setBouncing(false)}
         >
-            {props.letter === " " ? "⠀" : props.letter}
+            {props.letter === " " ? '\u00A0' : props.letter}
         </span>
     )
 }

@@ -1,0 +1,33 @@
+.layer {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-size: auto 100vh;
+    background-image: var(--backgroundImage);
+    background-blend-mode: multiply;
+    background-repeat: repeat-x;
+    mask-image: var(--backgroundImage);
+    mask-mode: alpha;
+    mask-size: auto 100vh;
+    mask-repeat: repeat-x;
+}
+
+.mouseOver {
+    pointer-events: none;
+}
+
+.page {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+}
+.pageContent {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

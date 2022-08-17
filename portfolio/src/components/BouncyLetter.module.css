@@ -1,6 +1,6 @@
 .bounce{
     animation-name: bounce;
-    color: rgb(0, 183, 255) !important;
+    color: #b5c5ff !important;
     transition: 0.3s;
 }
 

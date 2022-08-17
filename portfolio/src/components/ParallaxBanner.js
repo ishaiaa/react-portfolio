@@ -11,8 +11,6 @@ import darkImage2   from "../images/dark/2.svg"
 import darkImage3   from "../images/dark/3.svg"
 import darkImage4   from "../images/dark/4.svg"
 import darkImage5   from "../images/dark/5.svg"
-import darkWave     from "../images/dark/wave.svg"
-import darkWaveBlue from "../images/dark/wave-blue.svg"
 
 const bannerImages = {
     landscape: {
@@ -20,9 +18,7 @@ const bannerImages = {
         image2:     darkImage2,
         image3:     darkImage3,
         image4:     darkImage4,
-        image5:     darkImage5,
-        wave:       darkWave,
-        waveBlue:   darkWaveBlue
+        image5:     darkImage5
     }
 }
 
@@ -31,9 +27,9 @@ function ParallaxBanner(props) {
 
 
   const title = {
-    greeting: "Hello, I'm ",
-    name: "Zongi",
-    secondLine: "I'm a Web Developer",
+    greeting: "Hello,",
+    name: "I'm Sebastian",
+    secondLine: "Freelance Web Developer",
   }
   
   return (
@@ -41,7 +37,6 @@ function ParallaxBanner(props) {
         <ParallaxLayer offset={0} speed={0} factor={1}>
           <div className={styles.sky} style={{background: 'linear-gradient(to bottom, rgb(47, 70, 139) 0%, rgb(93, 121, 189) 100%)'}}/>
         </ParallaxLayer>
-
         <ParallaxLayer offset={0} speed={-0.6} factor={1}>
           <div className={styles.layer} style={{'--backgroundImage': `url(${bannerImages.landscape.image1})`}} />
         </ParallaxLayer>
@@ -51,30 +46,24 @@ function ParallaxBanner(props) {
         <ParallaxLayer offset={0} speed={-0.3} factor={1}>
           <div className={styles.layer} style={{'--backgroundImage': `url(${bannerImages.landscape.image3})`}} />
         </ParallaxLayer>
-
-        <ParallaxLayer offset={0} speed={-0.15} factor={1}>
-          <div className={styles.layer} style={{'--backgroundImage': `url(${bannerImages.landscape.image4})`}} />
-        </ParallaxLayer>
-        <ParallaxLayer offset={0} speed={0} factor={1}>
-          <div className={styles.layer} style={{'--backgroundImage': `url(${bannerImages.landscape.image5})`}} />
-        </ParallaxLayer>
-
-
-        <ParallaxLayer offset={0} speed={-0.4} factor={1}>
+        
+        <ParallaxLayer offset={0} speed={-0.2} factor={1}>
           <div className={styles.title} style={{'--backgroundImage': `url(${bannerImages.landscape.image3})`}} >
-            <h1 className={styles.bouncingLetters}>
+            <h2 className="bouncingLetters">
             {
               title.greeting.split("").map((letter, index) => {
                 return <BouncyLetter key={index} letter={letter} />
               })
             }
+            </h2>
+            <h2 className="bouncingLetters">
             {
               title.name.split("").map((letter, index) => {
                 return <BouncyLetter key={index} letter={letter} />
               })
             }
-            </h1>
-            <h2 className={styles.bouncingLetters}>
+            </h2>
+            <h2 className="bouncingLetters">
             {
               title.secondLine.split("").map((letter, index) => {
                 return <BouncyLetter key={index} letter={letter} />
@@ -83,20 +72,16 @@ function ParallaxBanner(props) {
             </h2>
           </div>
         </ParallaxLayer>
-
-
-        <ParallaxLayer offset={1} speed={0} factor={2}>
-          <div className={styles.page} />
+        
+        <ParallaxLayer className={styles.mouseOver} offset={0} speed={-0.15} factor={1}>
+          <div className={styles.layer} style={{'--backgroundImage': `url(${bannerImages.landscape.image4})`}} />
+        </ParallaxLayer>
+        <ParallaxLayer className={styles.mouseOver} offset={0} speed={-0} factor={1}>
+          <div className={styles.layer} style={{'--backgroundImage': `url(${bannerImages.landscape.image5})`}} />
         </ParallaxLayer>
 
 
-        <ParallaxLayer offset={1.1} speed={0.1} factor={1}>
-          <div className={styles.layer} style={{'--backgroundImage': `url(${bannerImages.landscape.waveBlue})`}} />
-        </ParallaxLayer>
-        <ParallaxLayer offset={1} speed={0} factor={2}>
-          <div className={styles.layer} style={{'--backgroundImage': `url(${bannerImages.landscape.wave})`}} />
-        </ParallaxLayer>
-
+        
     </>
   );
 }
