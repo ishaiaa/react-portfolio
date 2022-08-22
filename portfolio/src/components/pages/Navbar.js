@@ -1,7 +1,7 @@
 import React from "react";
 
 import styles from "./Navbar.module.css";
-import logo from "../images/moon1.svg"
+import logo from "../../images/moon1.svg"
 
 function Navbar(props) {
   return (

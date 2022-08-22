@@ -2,8 +2,8 @@ import React from "react";
 
 import { ParallaxLayer } from "@react-spring/parallax";
 
-import darkWave     from "../images/landscape/wave.svg"
-import darkWaveBlue from "../images/landscape/wave-blue.svg"
+import darkWave     from "../../images/landscape/wave.svg"
+import darkWaveBlue from "../../images/landscape/wave-blue.svg"
 
 import styles from "./PageLayer.module.css";
 

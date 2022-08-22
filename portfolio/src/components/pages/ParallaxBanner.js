@@ -3,14 +3,14 @@ import React from "react";
 import styles from "./ParallaxBanner.module.css";
 
 import { ParallaxLayer } from "@react-spring/parallax";
-import BouncyLetter from "./BouncyLetter";
+import BouncyLetter from "../reusables/BouncyLetter";
 
 
-import darkImage1   from "../images/dark/1.svg"
-import darkImage2   from "../images/dark/2.svg"
-import darkImage3   from "../images/dark/3.svg"
-import darkImage4   from "../images/dark/4.svg"
-import darkImage5   from "../images/dark/5.svg"
+import darkImage1   from "../../images/dark/1.svg"
+import darkImage2   from "../../images/dark/2.svg"
+import darkImage3   from "../../images/dark/3.svg"
+import darkImage4   from "../../images/dark/4.svg"
+import darkImage5   from "../../images/dark/5.svg"
 
 const bannerImages = {
     landscape: {

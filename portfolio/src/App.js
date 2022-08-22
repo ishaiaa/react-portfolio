@@ -1,10 +1,12 @@
 import React from 'react';
 import {Parallax} from '@react-spring/parallax';
 
-import Navbar from './components/Navbar';
-import ParallaxBanner from './components/ParallaxBanner';
-import PageLayer from './components/PageLayer';
-import AboutMe from './components/AboutMe';
+import PageLayer from './components/reusables/PageLayer';
+
+import Navbar from './components/pages/Navbar';
+import ParallaxBanner from './components/pages/ParallaxBanner';
+import AboutMe from './components/pages/AboutMe';
+import Experience from './components/pages/Experience';
 
 function App() {
   return (
@@ -32,12 +34,7 @@ function App() {
           factor={1.2}
           wave={0}
         >
-          <h1>About Me</h1>
-          <h1>About Me</h1>
-          <h1>About Me</h1>
-          <h1>About Me</h1>
-          <h1>About Me</h1>
-          <h1>About Me</h1>
+          <Experience />
 
         </PageLayer>
         <PageLayer 

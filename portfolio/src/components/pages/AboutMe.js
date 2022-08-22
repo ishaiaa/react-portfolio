@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
 
 
-import styles from "./AboutMe.module.css";
-import BouncyLetter from "./BouncyLetter";
-import SkillSphere from "./SkillSphere";
+import styles from "./PageLayout.module.css";
+import BouncyLetter from "../reusables/BouncyLetter";
+import SkillSphere from "../reusables/SkillSphere";
 
 function AboutMe(props) {
 
@@ -11,6 +11,9 @@ function AboutMe(props) {
 
     return (
         <div className={styles.mainContainer}>
+            <div  className={styles.widgetContainer}>
+                <SkillSphere />
+            </div>
             <div className={styles.textContainer}>
                 <h2 className="bouncingLetters">
                 {
@@ -25,9 +28,7 @@ function AboutMe(props) {
                     I am currently looking for a position in the web development industry.
                 </p>
             </div>
-            <div  className={styles.widgetContainer}>
-                <SkillSphere />
-            </div>
+            
         </div>
     )
 }
