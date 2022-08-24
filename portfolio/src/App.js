@@ -7,6 +7,7 @@ import Navbar from './components/pages/Navbar';
 import ParallaxBanner from './components/pages/ParallaxBanner';
 import AboutMe from './components/pages/AboutMe';
 import Experience from './components/pages/Experience';
+import Projects from './components/pages/Projects';
 
 function App() {
   return (
@@ -45,13 +46,7 @@ function App() {
           factor={1.2}
           wave={1}
         >
-          <h1>About Me</h1>
-          <h1>About Me</h1>
-          <h1>About Me</h1>
-          <h1>About Me</h1>
-          <h1>About Me</h1>
-          <h1>About Me</h1>
-          <h1>About Me</h1>
+          <Projects />
         </PageLayer>
         <PageLayer 
           offset={4.6}

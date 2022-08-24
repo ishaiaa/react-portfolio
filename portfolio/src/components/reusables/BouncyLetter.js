@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import styles from "./BouncyLetter.module.css";
 
-function BouncyText(props) {
+function BouncyLetter(props) {
     const [bouncing, setBouncing] = useState(false);
 
     function toggleBounce(state) {
@@ -21,4 +21,4 @@ function BouncyText(props) {
     )
 }
 
-export default BouncyText;
+export default BouncyLetter;
