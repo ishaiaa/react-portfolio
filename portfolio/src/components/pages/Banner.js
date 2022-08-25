@@ -35,9 +35,9 @@ function Banner(props) {
   
     return (  
     <div className={styles.page}>
-        <Parallax translateY={[-50, 50]} className={styles.parallax}>
+        <div className={styles.mouseOver}>
           <div className={styles.sky} style={{background: 'linear-gradient(to bottom, rgb(47, 70, 139) 0%, rgb(93, 121, 189) 100%)'}}/>
-        </Parallax>
+        </div>
         <Parallax translateY={[-40, 40]} className={styles.parallax}>
           <div className={styles.layer} style={{'--backgroundImage': `url(${bannerImages.landscape.image1})`}} />
         </Parallax>

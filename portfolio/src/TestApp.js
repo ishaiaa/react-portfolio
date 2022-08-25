@@ -15,19 +15,50 @@ function TestApp() {
   return (
     <div className={styles.app}>
         <Navbar /> 
-        
         <div className={styles.pageContainer1}>
             <Banner className={styles.absolute}/>
         </div>
-        <div className={styles.pageContainer}>
-            <AboutMe className={styles.absolute}/>
-        </div>
-        <div className={styles.pageContainer2}>
-            <Experience className={styles.absolute}/>
-        </div>
-        <div className={styles.pageContainer}>
-            <Projects className={styles.absolute}/>
-        </div>
+        
+
+        <PageLayer 
+          className={styles.pageContainer2}
+
+          primaryColor="#14191f"
+          secondaryColor="#010010"
+          
+          accent="#274187"
+          wave={0}
+        >
+          <AboutMe className={styles.absolute}/>
+        </PageLayer>
+        <PageLayer
+          className={styles.pageContainer2}
+          primaryColor="#010010"
+          secondaryColor="#14191f"
+          accent="#274187"
+          wave={1} 
+          
+        >
+          <Experience className={styles.absolute}/>
+
+        </PageLayer>
+        <PageLayer 
+          className={styles.pageContainer2}
+          primaryColor="#14191f"
+          secondaryColor="#010010"
+          accent="#274187"
+          wave={1}
+        >
+          <Projects className={styles.absolute}/>
+        </PageLayer>
+        <PageLayer 
+          className={styles.pageContainer2}
+          primaryColor="#010010"
+          secondaryColor="#14191f"
+          accent="#274187"
+          wave={0}
+        >
+        </PageLayer>
     </div>
   );
 }

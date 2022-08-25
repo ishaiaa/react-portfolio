@@ -5,11 +5,13 @@ import { ParallaxProvider } from 'react-scroll-parallax';
 import TestApp from './TestApp';
 import './index.css';
 
+const loading = document.getElementById('screen');
+const root = document.getElementById('root');
 
 ReactDOM.render(
     <ParallaxProvider>
         <TestApp />
     </ParallaxProvider>
     
-
-    , document.getElementById('root'));
+    , root
+);

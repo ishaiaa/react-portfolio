@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
 import Slider from 'infinite-react-carousel';
 
@@ -22,6 +22,24 @@ function Projects(props) {
     const icons = [reactIcon, htmlIcon, cssIcon, javascriptIcon, unityIcon, nodejsIcon, csharpIcon, toolsIcon]
 
     const title = "My Projects"
+
+    const [options, setOptions] = useState({
+        autoplay: false,
+        centerMode: true,
+        dots: true,
+        slidesToShow: window.innerWidth / 336,
+        virtualList: true,
+        wheel: true
+    });
+
+    useEffect(() => {
+        function handleResize() {
+          setOptions(prevState => ({...prevState, slidesToShow: window.innerWidth / 336}));
+        }
+    
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const settings =  {
         autoplay: false,
@@ -48,7 +66,7 @@ function Projects(props) {
                 </p>
             </div>
             <div className={styles.carouselContainer}>
-                <Slider { ...settings }>
+                <Slider { ...options }>
                     <ImageCard 
                         image={gateway}
                         title="Gate-Way"

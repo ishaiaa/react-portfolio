@@ -1,6 +1,6 @@
 
 .navbar {
-    position: fixed;
+    position: absolute;
     width: 100%;
     font-size: 20px;
     height: 3.5em;
