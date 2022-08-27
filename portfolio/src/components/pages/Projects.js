@@ -28,6 +28,8 @@ function Projects(props) {
         centerMode: true,
         dots: true,
         slidesToShow: window.innerWidth / 336,
+        centerPadding: 0,
+        adaptiveHeight: true,
         virtualList: true,
         wheel: true
     });
@@ -40,16 +42,6 @@ function Projects(props) {
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
-
-    const settings =  {
-        autoplay: false,
-        centerMode: true,
-        dots: true,
-        slidesToShow: 5,
-        virtualList: true,
-        wheel: true
-      };
-
 
     return (
         <div class={styles.mainContainer}>
