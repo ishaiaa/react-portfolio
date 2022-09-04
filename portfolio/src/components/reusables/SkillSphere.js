@@ -10,7 +10,7 @@ function SkillSphere(props) {
     ];
 
     const [options, setOptions] = useState({
-        radius: window.innerWidth > 1000 ? (window.innerWidth / 5) : 200,
+        radius: window.innerWidth > 1100 ? (window.innerWidth / 5) : (window.innerWidth / 3),
         maxSpeed: 'fast',
         initSpeed: 'fast',
         direction: 135,
@@ -18,7 +18,7 @@ function SkillSphere(props) {
 
     useEffect(() => {
         function handleResize() {
-          setOptions(prevState => ({...prevState, radius: window.innerWidth > 1000 ? (window.innerWidth / 5) : 200}));
+          setOptions(prevState => ({...prevState, radius: window.innerWidth > 1100 ? (window.innerWidth / 5) : (window.innerWidth / 3)}));
         }
     
         window.addEventListener('resize', handleResize);

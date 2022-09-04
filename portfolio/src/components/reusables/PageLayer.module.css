@@ -1,3 +1,7 @@
+.mainContainer {
+    max-width: 100%;
+}
+
 .layer {
     position: absolute;
     height: 100vh;
@@ -20,28 +24,30 @@
 
 .page {
     position: relative;
+    box-sizing: border-box;
     width: 100%;
-    height: 100%;
-    padding-top: 20%;
+    z-index: 10;
+    min-height: 100vh;
+    padding-top: 30vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
     z-index: 10;
     
 }
-.pageContent {
-    z-index: 1000;
-    width: 100%;
-    min-height: 100vh;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+.mouseover {
+    pointer-events: none;
 }
 
-.parallax {
-    z-index: 50;
-    position: absolute;
-    width: 100%;
-    pointer-events: none;
+.offset {
+    animation: offset 20s infinite alternate;
+}
+
+@keyframes offset {
+    100% {
+        background-position: 1000px 0;
+        mask-position: 1000px 0;
+    }
 }

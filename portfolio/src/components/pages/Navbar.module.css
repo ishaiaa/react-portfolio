@@ -82,3 +82,14 @@
     color: black;
     transition: 0.3s;
 }
+
+@media screen and (max-width: 1100px) {
+    .menu ul {
+        display: none;
+    }
+
+    .logoText {
+        display: none;
+    }
+
+}

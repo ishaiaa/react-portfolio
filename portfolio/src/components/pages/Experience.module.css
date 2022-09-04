@@ -5,3 +5,9 @@
     flex-direction: row;
     justify-content: space-around;
 }
+
+@media screen and (max-width: 1400px) {
+    .cardContainer {
+        flex-direction: column;
+    }
+}

@@ -10,7 +10,7 @@ function AboutMe(props) {
     const title = "About Me"
 
     return (
-        <div className={styles.mainContainer}>
+        <div className={`${styles.mainContainer} ${styles.inverseWidget}`}>
             <div  className={styles.widgetContainer}>
                 <SkillSphere />
             </div>

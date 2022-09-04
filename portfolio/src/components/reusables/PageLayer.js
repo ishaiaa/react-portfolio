@@ -19,17 +19,15 @@ function PageLayer(props) {
     return (
     <div className={styles.mainContainer}>
 
-        <Parallax translateY={[20, -20]} className={styles.parallax}>
-            <div className={styles.layer} style={{backgroundColor: props.accent, '--backgroundImage': `url(${props.wave ? bannerImages.waveBlue : bannerImages.wave})`}} />
+        <Parallax translateY={[10, -10]} className={styles.layer}>
+            <div className={`${styles.offset} ${styles.layer}`} style={{backgroundColor: props.accent, '--backgroundImage': `url(${props.wave ? bannerImages.waveBlue : bannerImages.wave})`}} />
         </Parallax>
 
-        <div className={styles.layer} style={{backgroundColor: props.secondaryColor, '--backgroundImage': `url(${props.wave ? bannerImages.wave : bannerImages.waveBlue})`}} />
+        <div className={`${styles.layer}`} style={{backgroundColor: props.secondaryColor, '--backgroundImage': `url(${props.wave ? bannerImages.wave : bannerImages.waveBlue})`}} />
 
 
         <div className={styles.page}  style={{backgroundColor: props.primaryColor}}>
-            <div className={styles.pageContent}>
-                {props.children}
-            </div>
+            {props.children}
         </div>
 
         

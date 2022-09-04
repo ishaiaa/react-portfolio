@@ -1,6 +1,6 @@
 .card {
     width: 250px;
-    height: 250px;
+    min-height: 250px;
     display: flex;
     flex-direction: column;
     background-color: rgb(20, 25, 31);
@@ -61,4 +61,30 @@
     padding: 5px 15px;
     width: fit-content;
     border-radius: 5px;
+}
+
+@media screen and (max-width: 1400px) {
+    .card {
+        width: 100%;
+        min-height: 170px;
+        gap: 1em;
+        margin: 10px 0;
+    }
+
+    .cardHeader {
+        justify-content: flex-start;
+        gap: 1em;
+        margin: 0;
+    }
+
+    .cardIcon {
+        height: 2.5em !important;
+        width: 2.5em !important;
+        border-radius: 10px;
+        flex: 0;
+    }
+
+    .cardTitle {
+        margin: 0;
+    }
 }

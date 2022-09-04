@@ -10,8 +10,18 @@ import Banner from './components/pages/Banner';
 import AboutMe from './components/pages/AboutMe';
 import Experience from './components/pages/Experience';
 import Projects from './components/pages/Projects';
+import { useEffect } from 'react';
 
-function TestApp() {
+function TestApp(props) {
+
+  useEffect(() => {
+    window.addEventListener('load', function () {
+      props.loadingScreen.className = "nodisplay"
+      document.body.className = ""
+    })
+      
+  })
+
   return (
     <div className={styles.app}>
         <Navbar /> 
@@ -25,7 +35,7 @@ function TestApp() {
 
           primaryColor="#14191f"
           secondaryColor="#010010"
-          
+
           accent="#274187"
           wave={0}
         >
@@ -35,6 +45,7 @@ function TestApp() {
           className={styles.pageContainer2}
           primaryColor="#010010"
           secondaryColor="#14191f"
+
           accent="#274187"
           wave={1} 
           
@@ -46,6 +57,7 @@ function TestApp() {
           className={styles.pageContainer2}
           primaryColor="#14191f"
           secondaryColor="#010010"
+
           accent="#274187"
           wave={1}
         >
@@ -55,6 +67,7 @@ function TestApp() {
           className={styles.pageContainer2}
           primaryColor="#010010"
           secondaryColor="#14191f"
+
           accent="#274187"
           wave={0}
         >

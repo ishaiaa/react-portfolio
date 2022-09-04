@@ -39,3 +39,22 @@
     height: 100%;
     padding: 3em 0;
 }
+
+.inverseWidget {
+    flex-direction: row;
+}
+
+@media screen and (max-width: 1100px) {
+    .mainContainer {
+        flex-direction: column;
+    }
+    .widgetContainer {
+        width: 100%;
+    }
+    .textContainer {
+        width: 100%;
+    }
+    .inverseWidget {
+        flex-direction: column-reverse;
+    }
+}
