@@ -7,6 +7,7 @@ import './index.css';
 const loading = document.getElementById('screen');
 const root = document.getElementById('root');
 
+document.title = 'zongi.dev - Home';
 
 ReactDOM.render(
     <ParallaxProvider>

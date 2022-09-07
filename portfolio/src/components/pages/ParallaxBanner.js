@@ -4,6 +4,8 @@ import styles from "./ParallaxBanner.module.css";
 
 import { ParallaxLayer } from "@react-spring/parallax";
 import BouncyLetter from "../reusables/BouncyLetter";
+import Bounce from 'react-reveal/Bounce';
+
 
 
 import darkImage1   from "../../images/dark/1.svg"
@@ -52,21 +54,27 @@ function ParallaxBanner(props) {
             <h2 className="bouncingLetters">
             {
               title.greeting.split("").map((letter, index) => {
-                return <BouncyLetter key={index} letter={letter} />
+                return (
+                    <BouncyLetter key={index} letter={letter} delay={index*300}/>
+                )
               })
             }
             </h2>
             <h2 className="bouncingLetters">
             {
               title.name.split("").map((letter, index) => {
-                return <BouncyLetter key={index} letter={letter} />
+                return (
+                    <BouncyLetter key={index} letter={letter} delay={index*300}/>
+                )
               })
             }
             </h2>
             <h2 className="bouncingLetters">
             {
               title.secondLine.split("").map((letter, index) => {
-                return <BouncyLetter key={index} letter={letter} />
+                return (
+                    <BouncyLetter key={index} letter={letter} delay={index*300}/>
+                )
               })
             }
             </h2>

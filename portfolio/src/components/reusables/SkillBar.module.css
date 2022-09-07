@@ -22,5 +22,20 @@
 }
 
 .bar {
+    width: var(--custom-width);
     height: 100%;
+}
+
+.loadAnim {
+    animation: load 1s;
+}
+
+@keyframes load {
+    0% {
+       width: 0;
+    }
+
+    100% {
+        width: var(--custom-width);
+    }
 }

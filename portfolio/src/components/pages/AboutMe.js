@@ -3,6 +3,9 @@ import React, { useEffect, useState, useRef } from "react";
 
 import styles from "./PageLayout.module.css";
 import BouncyLetter from "../reusables/BouncyLetter";
+import Fade from 'react-reveal/Fade';
+
+
 import SkillSphere from "../reusables/SkillSphere";
 
 function AboutMe(props) {
@@ -12,13 +15,16 @@ function AboutMe(props) {
     return (
         <div className={`${styles.mainContainer} ${styles.inverseWidget}`}>
             <div  className={styles.widgetContainer}>
-                <SkillSphere />
+                <Fade duration={1500} delay={100}>
+                    <SkillSphere />
+                </Fade>
+                
             </div>
             <div className={styles.textContainer}>
                 <h2 className="bouncingLetters">
                 {
                     title.split("").map((letter, index) => {
-                        return <BouncyLetter key={index} letter={letter} />
+                        return <BouncyLetter key={index} letter={letter} delay={index*80}/>
                     })
                 }
                 </h2>

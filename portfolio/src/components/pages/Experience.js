@@ -6,6 +6,7 @@ import BouncyLetter from "../reusables/BouncyLetter"
 import SkillBar from '../reusables/SkillBar'
 import Card from '../reusables/Card'
 
+import Bounce from 'react-reveal/Bounce'
 
 import pfeIcon from '../../images/pfe.png'
 import freelanceIcon from '../../images/freelancing.png'
@@ -19,7 +20,7 @@ function Experience(props) {
                 <h2 className="bouncingLetters">
                 {
                     title.split("").map((letter, index) => {
-                        return <BouncyLetter key={index} letter={letter} />
+                        return <BouncyLetter key={index} letter={letter} delay={index*80}/>
                     })
                 }
                 </h2>
@@ -31,6 +32,7 @@ function Experience(props) {
             </div>
         
             <div  className={styles.widgetContainer}>
+                
                 <SkillBar
                     title={"HTML"}
                     progress={90}
@@ -63,20 +65,26 @@ function Experience(props) {
                 />
 
                 <div className={cardStyles.cardContainer} >
-                    <Card 
-                        icon={freelanceIcon}
-                        title={"Freelancing"}
-                        company={""}
-                        timespan={"Now"}
-                        description={"I create responsive websites for desktop and mobile. I work with Frontend and Backend frameworks in order to deliver best quality products"}
-                    />
-                    <Card 
-                        icon={pfeIcon}
-                        title={"Technician and Backend developer"}
-                        company={"Polska Federacja Esportowa"}
-                        timespan={"May 2021 - September 2022"}
-                        description={"PFE is a legal foundation that with esports. We carry out events / projects / orders for companies and more!"}
-                    />
+                    <Bounce>
+                        <Card 
+                            icon={freelanceIcon}
+                            title={"Freelancing"}
+                            company={""}
+                            timespan={"Now"}
+                            description={"I create responsive websites for desktop and mobile. I work with Frontend and Backend frameworks in order to deliver best quality products"}
+                        />
+                    </Bounce>
+                    <Bounce delay={500}>
+                        <Card 
+                            icon={pfeIcon}
+                            title={"Technician and Backend developer"}
+                            company={"Polska Federacja Esportowa"}
+                            timespan={"May 2021 - September 2022"}
+                            description={"PFE is a legal foundation that with esports. We carry out events / projects / orders for companies and more!"}
+                        />
+                    </Bounce>
+                    
+                    
                 </div>
             </div>
         </div>

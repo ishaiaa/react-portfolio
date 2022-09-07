@@ -18,14 +18,15 @@ function Contact(props) {
                 <h2 className="bouncingLetters">
                 {
                     title.split("").map((letter, index) => {
-                        return <BouncyLetter key={index} letter={letter} />
+                        return <BouncyLetter key={index} letter={letter} delay={index*80}/>
                     })
                 }
                 </h2>
                 <p>
-                    I am a web developer with a passion for creating beautiful and functional websites. <br />
-                    I have a strong background in web development and have worked with many different languages and frameworks. <br />
-                    I am currently looking for a position in the web development industry.
+                    I'm interested in freelance opportunities aswell as long term jobs.
+                    However, if you have other request or question, don’t hesitate to use the form, or get in touch using different methods.
+
+
                 </p>
             </div>
         </div>

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 import styles from "./BouncyLetter.module.css";
+import Bounce from 'react-reveal/Bounce';
+
 
 function BouncyLetter(props) {
     const [bouncing, setBouncing] = useState(false);
@@ -16,7 +18,7 @@ function BouncyLetter(props) {
             onClick={() => toggleBounce(true)}
             onAnimationEnd={() => setBouncing(false)}
         >
-            {props.letter === " " ? '\u00A0' : props.letter}
+            <Bounce delay={props.delay}>{props.letter === " " ? '\u00A0' : props.letter}</Bounce>
         </span>
     )
 }

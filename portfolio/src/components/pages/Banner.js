@@ -53,21 +53,21 @@ function Banner(props) {
             <h2 className="bouncingLetters">
             {
               title.greeting.split("").map((letter, index) => {
-                return <BouncyLetter key={index} letter={letter} />
+                return <BouncyLetter key={index} letter={letter} delay={index*50}/>
               })
             }
             </h2>
             <h2 className="bouncingLetters">
             {
               title.name.split("").map((letter, index) => {
-                return <BouncyLetter key={index} letter={letter} />
+                return <BouncyLetter key={index} letter={letter} delay={title.greeting.length*50 + index*50}/>
               })
             }
             </h2>
             <h2 className="bouncingLetters">
             {
               title.secondLine.split("").map((letter, index) => {
-                return <BouncyLetter key={index} letter={letter} />
+                return <BouncyLetter key={index} letter={letter} delay={title.greeting.length*50 + title.name.length*50 + index*50}/>
               })
             }
             </h2>
