@@ -5,10 +5,16 @@ import logo from "../../images/moon1.svg"
 
 function Navbar(props) {
   return (
+    <>
     <div className={styles.navbar}>
         <div className={styles.logo}>
             <img src={logo} className={styles.logoImage} alt="logo" />
             <p className={styles.logoText}>ZONGI.DEV</p>
+        </div>
+        <div className={styles.hamburgerMenu}>
+            <div className={styles.hamburgerMenuBar} /> 
+            <div className={styles.hamburgerMenuBar} /> 
+            <div className={styles.hamburgerMenuBar} /> 
         </div>
         <div className={styles.menu}>
             <ul>
@@ -27,6 +33,10 @@ function Navbar(props) {
             </ul>
         </div>
     </div>
+    <div className={styles.mobileMenu}>
+
+    </div>
+    </>
     );
 }
 

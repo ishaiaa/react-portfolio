@@ -18,11 +18,13 @@
 }
 
 .textContainer h2 {
+    max-width: 100%;
     font-size: 3em;
     font-weight: bold;
 }
 
 .textContainer p {
+    max-width: 100%;
     font-size: 2em;
     font-weight: bold;
     margin-top: 1em;

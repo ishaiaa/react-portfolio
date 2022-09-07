@@ -10,6 +10,8 @@ import Banner from './components/pages/Banner';
 import AboutMe from './components/pages/AboutMe';
 import Experience from './components/pages/Experience';
 import Projects from './components/pages/Projects';
+import Contact from './components/pages/Contact';
+
 import { useEffect } from 'react';
 
 function TestApp(props) {
@@ -71,6 +73,7 @@ function TestApp(props) {
           accent="#274187"
           wave={0}
         >
+          <Contact className={styles.absolute}/>
         </PageLayer>
     </div>
   );
