@@ -3,6 +3,7 @@
     min-height: 250px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     background-color: rgb(20, 25, 31);
     box-sizing: border-box;
     border-radius: 15px;
@@ -23,7 +24,8 @@
     height: auto;
     width: 100%;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 1em;
     margin: 0 0 20px 0;
 }
 
@@ -74,8 +76,7 @@
     }
 
     .cardHeader {
-        justify-content: flex-start;
-        gap: 1em;
+        
         margin: 0;
     }
 
