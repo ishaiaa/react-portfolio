@@ -1,0 +1,18 @@
+.boxOn {
+    opacity: 1;
+    transition: 1s;
+}
+
+.boxOff {
+    opacity: 0;
+    transition: 1s;
+    pointer-events: none;
+}
+
+.mainContainer {
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    background: linear-gradient(-150deg, rgb(45, 84, 156) 0%, rgb(17, 0, 255) 150%);
+    z-index: 100;
+}

@@ -3,7 +3,7 @@ import React, {useState, useEffect} from "react";
 import Slider from 'infinite-react-carousel';
 
 import styles from './Projects.module.css'
-import BouncyLetter from "../reusables/BouncyLetter";
+import BouncyText from "../reusables/BouncyText";
 import ImageCard from "../reusables/ImageCard";
 
 import reactIcon            from "../../images/techIcons/react.svg"
@@ -45,14 +45,10 @@ function Projects(props) {
     }, []);
 
     return (
-        <div class={styles.mainContainer}>
-            <div class={styles.textContainer}>
+        <div className={styles.mainContainer}>
+            <div className={styles.textContainer}>
                 <h2 className="bouncingLetters">
-                    {
-                        title.split("").map((letter, index) => {
-                            return <BouncyLetter key={index} letter={letter} delay={index*80}/>
-                        })
-                    }
+                    <BouncyText text={title} />
                 </h2>
                 <p>
                     Here is list of most important projects i've worked on in past few years

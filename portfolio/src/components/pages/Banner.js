@@ -4,8 +4,7 @@ import { Parallax } from "react-scroll-parallax";
 
 import styles from "./Banner.module.css";
 
-import BouncyLetter from "../reusables/BouncyLetter";
-
+import BouncyText from "../reusables/BouncyText";
 
 import darkImage1   from "../../images/dark/1.svg"
 import darkImage2   from "../../images/dark/2.svg"
@@ -29,14 +28,15 @@ function Banner(props) {
 
     const title = {
         greeting: "Hello,",
-        name: "I'm Sebastian",
-        secondLine: "Freelance Web Developer",
+        name: "I'm Sebastian,",
+        secondLine: "Web Developer",
     }
   
     return (  
     <div className={styles.page}>
         <div className={styles.mouseOver}>
-          <div className={styles.sky} style={{background: 'linear-gradient(to bottom, rgb(47, 70, 139) 0%, rgb(93, 121, 189) 100%)'}}/>
+          <div className={styles.sky} style={{background: 'linear-gradient(to bottom, rgb(47, 70, 139) 0%, rgb(93, 121, 189) 100%)'}}>
+          </div>
         </div>
         <Parallax translateY={[-40, 40]} className={styles.parallax}>
           <div className={styles.layer} style={{'--backgroundImage': `url(${bannerImages.landscape.image1})`}} />
@@ -47,35 +47,21 @@ function Banner(props) {
         <Parallax translateY={[-20, 20]} className={styles.parallax}>
           <div className={styles.layer} style={{'--backgroundImage': `url(${bannerImages.landscape.image3})`}} />
         </Parallax>
-        
-        <Parallax translateY={[-15, 15]} className={styles.parallax}>
-          <div className={styles.title} style={{'--backgroundImage': `url(${bannerImages.landscape.image3})`}} >
-            <h2 className="bouncingLetters">
-            {
-              title.greeting.split("").map((letter, index) => {
-                return <BouncyLetter key={index} letter={letter} delay={index*50}/>
-              })
-            }
-            </h2>
-            <h2 className="bouncingLetters">
-            {
-              title.name.split("").map((letter, index) => {
-                return <BouncyLetter key={index} letter={letter} delay={title.greeting.length*50 + index*50}/>
-              })
-            }
-            </h2>
-            <h2 className="bouncingLetters">
-            {
-              title.secondLine.split("").map((letter, index) => {
-                return <BouncyLetter key={index} letter={letter} delay={title.greeting.length*50 + title.name.length*50 + index*50}/>
-              })
-            }
-            </h2>
-          </div>
-        </Parallax>
-        
         <Parallax translateY={[-10, 10]} className={`${styles.mouseOver} ${styles.parallax}`}>
           <div className={styles.layer} style={{'--backgroundImage': `url(${bannerImages.landscape.image4})`}} />
+        </Parallax>
+        <Parallax translateY={[-15, 15]} className={styles.parallax}>
+          <div className={styles.title} style={{'--backgroundImage': `url(${bannerImages.landscape.image3})`}} >
+            <h3 className="bouncingLetters">
+              <BouncyText text={title.greeting} animationOffset={0} />
+            </h3>
+            <h2 className="bouncingLetters">
+              <BouncyText text={title.name} animationOffset={title.greeting.length*50} />
+            </h2>
+            <h3 className="bouncingLetters">
+              <BouncyText text={title.secondLine} animationOffset={title.greeting.length*50 + title.name.length*50} />
+            </h3>
+          </div>
         </Parallax>
         <div className={styles.mouseOver}>
           <div className={styles.layer} style={{'--backgroundImage': `url(${bannerImages.landscape.image5})`}} />

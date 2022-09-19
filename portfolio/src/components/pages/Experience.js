@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from './PageLayout.module.css'
 import cardStyles from './Experience.module.css'
-import BouncyLetter from "../reusables/BouncyLetter"
+import BouncyText from "../reusables/BouncyText"
 import SkillBar from '../reusables/SkillBar'
 import Card from '../reusables/Card'
 
@@ -18,11 +18,7 @@ function Experience(props) {
         <div className={styles.mainContainer}>
             <div className={styles.textContainer}>
                 <h2 className="bouncingLetters">
-                {
-                    title.split("").map((letter, index) => {
-                        return <BouncyLetter key={index} letter={letter} delay={index*80}/>
-                    })
-                }
+                    <BouncyText text={title} />
                 </h2>
                 <p>
                 I've been programming for 5 years, and took part in many contests and competitions on National and International levels. 

@@ -12,6 +12,7 @@
 
 
 .sky {
+    overflow: hidden;
     position: absolute;
     height: 100vh;
     width: 100%;
@@ -79,15 +80,21 @@
 
 @media screen and (max-width: 1000px) {
     .title {
-        width: 100%;
-        top: 0;
-        left: 0;
-        text-align: center;
-        font-size: 2em;
+        width: 80%;
+        top: 20%;
+        font-size: 2.5em;
         margin-top: 100px;
     }
 
-    .title h1, .title h2, .title h2 {
+    .title h1, .title h2 {
         margin: auto;
+    }
+
+}
+
+
+@media screen and (max-width: 400px) {
+    .title {
+        font-size: 8vw;
     }
 }

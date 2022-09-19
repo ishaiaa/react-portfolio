@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 
 
 import styles from "./PageLayout.module.css";
-import BouncyLetter from "../reusables/BouncyLetter";
+import BouncyText from "../reusables/BouncyText";
 import Fade from 'react-reveal/Fade';
 
 
@@ -22,11 +22,7 @@ function AboutMe(props) {
             </div>
             <div className={styles.textContainer}>
                 <h2 className="bouncingLetters">
-                {
-                    title.split("").map((letter, index) => {
-                        return <BouncyLetter key={index} letter={letter} delay={index*80}/>
-                    })
-                }
+                    <BouncyText text={title} />
                 </h2>
                 <p>
                     I am a web developer with a passion for creating beautiful and functional websites. <br />

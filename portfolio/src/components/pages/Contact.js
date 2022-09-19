@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./Contact.module.css"
 import pageLayout from "./PageLayout.module.css"
 
-import BouncyLetter from "../reusables/BouncyLetter";
+import BouncyText from "../reusables/BouncyText";
 import SkillSphere from "../reusables/SkillSphere";
 
 function Contact(props) {
@@ -16,11 +16,7 @@ function Contact(props) {
             </div>
             <div className={pageLayout.textContainer}>
                 <h2 className="bouncingLetters">
-                {
-                    title.split("").map((letter, index) => {
-                        return <BouncyLetter key={index} letter={letter} delay={index*80}/>
-                    })
-                }
+                    <BouncyText text={title} />
                 </h2>
                 <p>
                     I'm interested in freelance opportunities aswell as long term jobs.
