@@ -16,26 +16,31 @@ function Navbar(props) {
     const [menuToggle, setMenuToggle] = useState(false);
     const [playMusic, setPlayMusic] = useState(false);
 
-    function toggleMenu() {
-        setMenuToggle(value => !value);
-        window.scroll(0, 0)
+    function toggleMenu(state) {
+        if(state === undefined) {
+            setMenuToggle(value => !value);
+            window.scroll(0, 0)
+
+            return
+        }
+        setMenuToggle(state);
+        if(state) window.scroll(0, 0)
     }
 
     function toggleMusic() {
         setPlayMusic(value => !value);
     }
 
-    document.getElementById("body").className = menuToggle ? "noscroll" : ""
     return (
     <>
-    <NavScreen on={menuToggle}/>
+    <NavScreen on={menuToggle} stateUpdate={toggleMenu}/>
     <div className={styles.navbar}>
         <div className={styles.logo}>
             <img src={logo} className={styles.logoImage} alt="logo" />
             <p className={styles.logoText}>ZONGI.DEV</p>
         </div>
         <div className={styles.rightBox}>
-            <div onClick={toggleMenu}className={`${styles.hamburgerMenu} ${menuToggle ? styles.menuToggle : ''}`}>
+            <div onClick={() => toggleMenu()} className={`${styles.hamburgerMenu} ${menuToggle ? styles.menuToggle : ''}`}>
                 <div className={styles.hamburgerMenuBar} /> 
                 <div className={styles.hamburgerMenuBar} /> 
                 <div className={styles.hamburgerMenuBar} /> 

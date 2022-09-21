@@ -22,8 +22,8 @@ function ImageCard(props) {
                     {
                         props.icons.map((icon, index) => {
                             return(
-                                <div className={styles.cardIcon}>
-                                    <img key={index} src={icon} alt="" />
+                                <div key={index} className={styles.cardIcon}>
+                                    <img src={icon} alt="" />
                                 </div>
                             )
                         })

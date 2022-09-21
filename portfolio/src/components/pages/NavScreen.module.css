@@ -12,7 +12,77 @@
 .mainContainer {
     width: 100%;
     min-height: 100vh;
-    position: fixed;
+    position: absolute;
     background: linear-gradient(-150deg, rgb(45, 84, 156) 0%, rgb(17, 0, 255) 150%);
     z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list {
+    width: 100%;
+    height: 50%;
+    margin-top: max(20%, 4em);
+}
+
+.list ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list li {
+    font-size: 3em;
+    text-align: center;
+    position: relative;
+    list-style: none;
+    margin: 1rem;
+    width: 100%;
+    cursor: pointer;;
+}
+
+.list li::before {
+    content: "";
+    width: 0%;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    padding: 10px 0;
+    height: 1em;
+    background-color: white;
+    transition: 0.4s;
+    z-index: -1;
+}
+
+.list li:hover::before {
+    width: 100%;
+}
+
+.list li:hover a {
+    color: black;
+    transition: 0.4s;
+}
+
+.list a {
+    user-select: none;
+    width: 100%;
+    color: white;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+html:not([data-scroll='0'])  .boxOn {
+    opacity: 0;
+    transition: 1s;
+    pointer-events: none;
+}
+
+@media screen and (min-width: 1100px) {
+    .boxOn {
+        opacity: 0;
+        transition: 1s;
+        pointer-events: none;
+    }
 }

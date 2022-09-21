@@ -20,15 +20,14 @@ function SkillSphere(props) {
         function handleResize() {
           setOptions(prevState => ({...prevState, radius: window.innerWidth > 1100 ? (window.innerWidth / 5) : (window.innerWidth / 3)}));
         }
-    
+        console.log("eventListener Added")
         window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
+        return () => {console.log("deleted");window.removeEventListener('resize', handleResize)};
     }, []);
 
 
     useEffect(() => {
         let cloud = TagCloud(container, texts, options);
-        console.log("test")
         return(() => {cloud.destroy()})
     }, [options]);
 
