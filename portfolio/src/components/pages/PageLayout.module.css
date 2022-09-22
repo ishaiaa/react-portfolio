@@ -49,6 +49,7 @@
 @media screen and (max-width: 1100px) {
     .mainContainer {
         flex-direction: column;
+        gap: 2em;
     }
     .widgetContainer {
         width: 100%;
