@@ -1,0 +1,99 @@
+.cardBody {
+    width: max(300px, 50%);
+    height: 100px;
+    background-color: rgb(20, 25, 31);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.1s;
+}
+
+.cardInfo {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+}
+
+.cardInfo img {
+    margin-left: 1em;
+    height: 75%;
+    border-radius: 10px;
+}
+
+.cardDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 75%
+}
+
+.title {
+    color: white;
+    font-weight: 400;
+    font-size: 2em;
+}
+
+.desc {
+    color: rgba(255, 255, 255, 0.555);
+    font-size: 1.2em;
+    text-overflow: clip;
+    width: 100%;
+}
+
+.cardLink {
+    margin-right: 1em;
+    flex: 0;
+}
+
+.cardLink a {
+    width: 40px;
+    height: auto;
+    padding: 6px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: rgb(35, 44, 54);
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.274);
+    text-transform: uppercase;
+    font-weight: 600; 
+    transition: 0.2s;
+}
+
+.cardLink a:hover {
+    color: rgba(255, 255, 255, 0.356);
+    background-color: rgb(71, 86, 104);
+    transition: 0.2s;
+
+}
+
+.cardBody:hover {
+    transform: translateX(10px);
+    transition: 0.1s;
+}
+
+@media screen and (max-width: 400px) {
+    .title {
+        font-size: 1.5em;
+    }
+
+    .desc {
+        font-size: 1em;
+    }
+    
+    .cardInfo img {
+        height: 50%;
+        border-radius: 10px;
+    }
+
+    .cardLink {
+        font-size: 0.8em;
+    }
+}

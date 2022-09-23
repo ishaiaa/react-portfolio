@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 import styles from './FormPanel.module.css'
+import { Zoom } from "react-reveal";
 
 function FormPanel(props) {
 
@@ -39,12 +40,16 @@ function FormPanel(props) {
                         if(!React.isValidElement(child)) return;
             
                         return(
-                            <div
+                            
+                            <Zoom bottom opposite when={formIndex === index}>
+                                <div
                                 key={index}
-                                className={`${styles.formTab} ${formIndex === index ? styles.selectedForm : styles.hiddenForm}`}
+                                className={styles.formTab}
                             >
                                 {child}
                             </div>
+                            </Zoom>
+                                
                         )
                     })
                 }

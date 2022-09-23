@@ -1,8 +1,6 @@
 .tabContainer {
     width: 100%;
     height: 100%;
-    background-color: rgb(20, 25, 31);
     border-radius: 20px;
-    padding: 2em;
     box-sizing: border-box;
 }
