@@ -1,5 +1,5 @@
 .cardBody {
-    width: max(300px, 50%);
+    width: max(300px, 65%);
     height: 100px;
     background-color: rgb(20, 25, 31);
     border-radius: 20px;
@@ -75,7 +75,7 @@
 }
 
 .cardBody:hover {
-    transform: translateX(10px);
+    background-color: rgb(31, 38, 46);
     transition: 0.1s;
 }
 
@@ -87,7 +87,7 @@
     .desc {
         font-size: 1em;
     }
-    
+
     .cardInfo img {
         height: 50%;
         border-radius: 10px;
