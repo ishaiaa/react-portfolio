@@ -6,7 +6,7 @@ import { Zoom } from "react-reveal";
 
 function FormPanel(props) {
 
-    const [formIndex, setFormIndex] = useState(1);
+    const [formIndex, setFormIndex] = useState(0);
 
 
     function selectNavItem(index) {
@@ -44,7 +44,7 @@ function FormPanel(props) {
                             <Zoom bottom opposite when={formIndex === index}>
                                 <div
                                 key={index}
-                                className={styles.formTab}
+                                className={`${styles.formTab} ${formIndex != index && styles.noActive}`}
                             >
                                 {child}
                             </div>

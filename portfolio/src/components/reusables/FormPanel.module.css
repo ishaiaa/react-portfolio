@@ -62,6 +62,10 @@
     background: transparent;
 }
 
+.noActive {
+    pointer-events: none;
+}
+
 .navSelected {
     color: white;
     transition: 0.4s;

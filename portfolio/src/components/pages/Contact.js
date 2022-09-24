@@ -16,10 +16,61 @@ import discordIcon from  "../../images/discord.png"
 import linkedinIcon from  "../../images/linkedin.png"
 import githubIcon from  "../../images/github.png"
 import emailIcon from  "../../images/email.png"
+import { useState } from "react";
 
 
 function Contact(props) {
     const title = "Contact Me"
+
+    const [formData, setFormData] = useState({
+        name: "",
+        mail: "",
+        subject: "",
+        message: "",
+        errors: {
+            name: false,
+            mail: false,
+            subject: false,
+            message: false
+        }
+    })
+
+    function handleInputChange(event) {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+
+        setFormData(state => {
+            return {
+                ...state,
+                [name]: value,
+                errors: {
+                    ...state.errors,
+                    [name]: (value === "")
+                }
+            }
+        })
+
+        
+    }
+
+    function handleClick(event) {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+
+        console.log(value)
+
+        setFormData(state => {
+            return {
+                ...state,
+                errors: {
+                    ...state.errors,
+                    [name]: (value === "")
+                }
+            }
+        })
+    }
 
     return (
         <div className={`${pageLayout.mainContainer} ${pageLayout.inverseWidget}`}>
@@ -28,7 +79,41 @@ function Contact(props) {
                 
                     <FormPanel>
                         <FormTab name="Message Me">
-                            <h1>Karta 1</h1>
+                            <div className={styles.formCard}>
+                                <input 
+                                    onChange={handleInputChange} 
+                                    onClick={handleClick} 
+                                    value={formData.name}     
+                                    name="name"      
+                                    className={`${styles.nameField} ${formData.errors.name && styles.emptyField}`} 
+                                    type="text" 
+                                    placeholder="Name" />
+                                <input    
+                                    onChange={handleInputChange}   
+                                    onClick={handleClick} 
+                                    value={formData.mail}     
+                                    name="mail"      
+                                    className={`${styles.mailField} ${formData.errors.mail && styles.emptyField}`} 
+                                    type="text" 
+                                    placeholder="Mail" />
+                                <input    
+                                    onChange={handleInputChange} 
+                                    onClick={handleClick} 
+                                    value={formData.subject}  
+                                    name="subject"   
+                                    className={`${styles.subjectField} ${formData.errors.subject && styles.emptyField}`} 
+                                    type="text" 
+                                    placeholder="Subject" />
+                                <textarea 
+                                    onChange={handleInputChange} 
+                                    onClick={handleClick} 
+                                    value={formData.message}  
+                                    name="message"   
+                                    className={`${styles.textField} ${formData.errors.message && styles.emptyField}`}   
+                                    placeholder="Message" />
+                                
+                                <button className={styles.formButton}>Send Message</button>
+                            </div>
                         </FormTab>
                         <FormTab name="Find Me">
                             <div className={styles.linkCards}>
