@@ -1,5 +1,5 @@
 .cardBody {
-    width: max(300px, 65%);
+    width: max(300px, 70%);
     height: 100px;
     background-color: rgb(20, 25, 31);
     border-radius: 20px;
@@ -7,46 +7,58 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    transition: 0.1s;
+    transition: 0.2s;
 }
 
 .cardInfo {
     height: 100%;
-    width: 70%;
+    max-width: 70%;
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 1em;
+    box-sizing: border-box;
+    transition: 0.2s;
 }
 
 .cardInfo img {
     margin-left: 1em;
     height: 75%;
     border-radius: 10px;
+    transition: 0.2s;
 }
 
 .cardDescription {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 75%
+    height: 50%;
+    width: 100%;
+    overflow-x: scroll;
+    transition: 0.2s;
+}
+
+.cardBody ::-webkit-scrollbar {
+    display: none;
 }
 
 .title {
     color: white;
     font-weight: 400;
     font-size: 2em;
+    transition: 0.2s;
 }
 
 .desc {
     color: rgba(255, 255, 255, 0.555);
     font-size: 1.2em;
-    text-overflow: clip;
-    width: 100%;
+    transition: 0.2s;
+    overflow-x: scroll;
 }
 
 .cardLink {
     margin-right: 1em;
+    transition: 0.2s;
     flex: 0;
 }
 
@@ -76,7 +88,26 @@
 
 .cardBody:hover {
     background-color: rgb(31, 38, 46);
-    transition: 0.1s;
+    transition: 0.2s;
+}
+
+@media screen and (max-width: 600px) {
+    .title {
+        font-size: 1.8em;
+    }
+
+    .desc {
+        font-size: 1.2em;
+    }
+
+    .cardInfo img {
+        height: 70%;
+        border-radius: 10px;
+    }
+
+    .cardLink {
+        font-size: 1em;
+    }
 }
 
 @media screen and (max-width: 400px) {
