@@ -10,6 +10,8 @@ import LinkCard from "../reusables/LinkCard";
 
 import BouncyText from "../reusables/BouncyText";
 
+import { toast } from "react-toastify";
+
 import { Fade } from "react-reveal";
 
 import discordIcon from  "../../images/discord.png"
@@ -17,7 +19,6 @@ import linkedinIcon from  "../../images/linkedin.png"
 import githubIcon from  "../../images/github.png"
 import emailIcon from  "../../images/email.png"
 import { useState } from "react";
-
 
 function Contact(props) {
     const title = "Contact Me"
@@ -72,8 +73,69 @@ function Contact(props) {
         })
     }
 
+    function submitForm() {
+        if(formData.name === "") {
+            missing("your name")
+            return
+        }
+        if(formData.mail === "") {
+            missing("your mail")
+            return
+        }
+        if(formData.subject === "") {
+            missing("the subject")
+            return
+        }
+        if(formData.message === "") {
+            missing("the message")
+            return
+        }
+
+        
+
+        if(Math.floor(Math.random() + 0.5)) {
+            toast.error(`An internal error occured!`, {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark"
+            });
+        }
+
+        else {
+            toast.success(`Message sent successfully!`, {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark"
+            });
+        }
+
+        function missing(text) {
+            toast.warning(`You havent specified ${text}!`, {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark"
+            });
+        }
+        
+    }
+
     return (
-        <div className={`${pageLayout.mainContainer} ${pageLayout.inverseWidget}`}>
+        <div id={props.useID} className={`${pageLayout.mainContainer} ${pageLayout.inverseWidget}`}>
             <Fade left>
             <div  className={pageLayout.widgetContainer}>
                 
@@ -112,7 +174,10 @@ function Contact(props) {
                                     className={`${styles.textField} ${formData.errors.message && styles.emptyField}`}   
                                     placeholder="Message" />
                                 
-                                <button className={styles.formButton}>Send Message</button>
+                                <button 
+                                    className={styles.formButton}
+                                    onClick={submitForm}
+                                >Send Message</button>
                             </div>
                         </FormTab>
                         <FormTab name="Find Me">
@@ -121,24 +186,24 @@ function Contact(props) {
                                     icon={discordIcon}
                                     title="Discord"
                                     description="zongi#4424"
-                                    link="#"
+                                    link="https://discord.gg/rNV2jnXMnv"
                                 />
                                 <LinkCard 
                                     icon={linkedinIcon}
                                     title="Linkedin"
-                                    link="#"
+                                    link="https://www.linkedin.com/in/sebastian-golba/"
                                 />
                                 <LinkCard 
                                     icon={githubIcon}
                                     title="Github"
                                     description="@zongii"
-                                    link="#"
+                                    link="https://github.com/zongii"
                                 />
                                 <LinkCard 
                                     icon={emailIcon}
                                     title="Mail"
                                     description="contact@zongi.dev"
-                                    link="#"
+                                    link="contact@zongi.dev"
                                     clipboard={true}
                                 />
                             </div>

@@ -33,7 +33,7 @@ function Banner(props) {
     }
   
     return (  
-    <div className={styles.page}>
+    <div id={props.useID} className={styles.page}>
         <div className={styles.mouseOver}>
           <div className={styles.sky} style={{background: 'linear-gradient(to bottom, rgb(47, 70, 139) 0%, rgb(93, 121, 189) 100%)'}}>
           </div>

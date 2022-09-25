@@ -15,7 +15,7 @@ function Experience(props) {
     const title = "My Experience"
 
     return (
-        <div className={styles.mainContainer}>
+        <div id={props.useID} className={styles.mainContainer}>
             <div className={styles.textContainer}>
                 <h2 className="bouncingLetters">
                     <BouncyText text={title} />

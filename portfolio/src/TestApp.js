@@ -5,12 +5,18 @@ import styles from './TestApp.module.css'
 
 import PageLayer from './components/reusables/PageLayer';
 
+import { ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
+
 import Navbar from './components/pages/Navbar';
 import Banner from './components/pages/Banner';
 import AboutMe from './components/pages/AboutMe';
 import Experience from './components/pages/Experience';
 import Projects from './components/pages/Projects';
 import Contact from './components/pages/Contact';
+
+import Footer from './components/pages/Footer';
 
 import { useEffect } from 'react';
 
@@ -24,11 +30,12 @@ function TestApp(props) {
       
   })
 
+
   return (
     <div className={styles.app}>
         <Navbar /> 
         <div className={styles.pageContainer1}>
-            <Banner className={styles.absolute}/>
+            <Banner useID="home" className={styles.absolute}/>
         </div>
         
 
@@ -41,7 +48,7 @@ function TestApp(props) {
           accent="#274187"
           wave={0}
         >
-          <AboutMe className={styles.absolute}/>
+          <AboutMe useID="about" className={styles.absolute}/>
         </PageLayer>
         <PageLayer
           className={styles.pageContainer2}
@@ -52,7 +59,7 @@ function TestApp(props) {
           wave={1} 
           
         >
-          <Experience className={styles.absolute}/>
+          <Experience useID="experience" className={styles.absolute}/>
 
         </PageLayer>
         <PageLayer 
@@ -63,7 +70,7 @@ function TestApp(props) {
           accent="#274187"
           wave={1}
         >
-          <Projects className={styles.absolute}/>
+          <Projects useID="projects" className={styles.absolute}/>
         </PageLayer>
         <PageLayer 
           className={styles.pageContainer2}
@@ -73,8 +80,24 @@ function TestApp(props) {
           accent="#274187"
           wave={0}
         >
-          <Contact className={styles.absolute}/>
+          <Contact useID="contact" className={styles.absolute}/>
         </PageLayer>
+        <ToastContainer
+          position="bottom-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+        <Footer
+          primaryColor="#010010"
+          accent="#14191f"
+
+        />
     </div>
   );
 }

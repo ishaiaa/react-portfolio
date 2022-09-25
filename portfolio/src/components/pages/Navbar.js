@@ -31,6 +31,22 @@ function Navbar(props) {
         setPlayMusic(value => !value);
     }
 
+    function scrollTo(event) {
+        event.preventDefault()
+
+        console.log(event.currentTarget.name)
+
+        const offset = document.getElementById(event.currentTarget.name).getBoundingClientRect().top
+
+        console.log(offset)
+
+        window.scrollTo({
+            left: 0,
+            top: offset-100,
+            behavior: "smooth",
+        })
+    }
+
     return (
     <>
     <NavScreen on={menuToggle} stateUpdate={toggleMenu}/>
@@ -47,17 +63,20 @@ function Navbar(props) {
             </div>
             <div className={styles.menu}>
                 <ul>
+                    {/* <li>
+                        <a onClick={scrollTo} name="home" href="home">Home</a>
+                    </li> */}
                     <li>
-                        <a href="#">Home</a>
+                        <a onClick={scrollTo} name="about" href="#about">About</a>
                     </li>
                     <li>
-                        <a href="#">About</a>
+                        <a onClick={scrollTo} name="experience" href="#experience">Experience</a>
                     </li>
                     <li>
-                        <a href="#">Projects</a>
+                        <a onClick={scrollTo} name="projects" href="#projects">Projects</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a onClick={scrollTo} name="contact" href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>

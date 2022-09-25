@@ -44,7 +44,7 @@ function FormPanel(props) {
                             <Zoom bottom opposite when={formIndex === index}>
                                 <div
                                 key={index}
-                                className={`${styles.formTab} ${formIndex != index && styles.noActive}`}
+                                className={`${styles.formTab} ${formIndex !== index && styles.noActive}`}
                             >
                                 {child}
                             </div>

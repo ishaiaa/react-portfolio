@@ -79,6 +79,33 @@ html:not([data-scroll='0'])  .boxOn {
     pointer-events: none;
 }
 
+.icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5em;
+    z-index: 20;
+    min-height: 3em;
+    flex-wrap: wrap;
+    margin-bottom: 10vh;
+    position: relative;
+}
+
+.icons::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: -2em;
+    transition: 0.4s;
+    align-self: center;
+    border-radius: 10px;
+    display: block;
+    height: 3px;
+    background: white;
+}
+
+
+
 @media screen and (min-width: 1100px) {
     .boxOn {
         opacity: 0;

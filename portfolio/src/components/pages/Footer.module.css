@@ -1,0 +1,60 @@
+.mainContainer {
+    width: 100%;
+    background-color: var(--backgroundColor);
+}
+
+.wave {
+    height: 100px;
+    width: 100%;
+    background-size: auto 100px;
+    background-image: var(--backgroundImage);
+    background-blend-mode: multiply;
+    background-repeat: repeat-x;
+    mask-image: var(--backgroundImage);
+    mask-mode: alpha;
+    mask-size: auto 100px;
+    mask-repeat: repeat-x;
+    z-index: 50;
+    pointer-events: none;
+    animation: offset 20s infinite alternate;
+}
+
+@keyframes offset {
+    100% {
+        background-position: 1000px 0;
+        mask-position: 1000px 0;
+    }
+}
+
+.content {
+    min-height: 300px;
+    width: 100%;
+    background-color: var(--backgroundColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 4em 4em 4em;
+    box-sizing: border-box;
+    gap: 1em;
+    text-align: center;
+}
+
+.footerTitle {
+    color: white;
+    font-size: 30px;
+}
+
+.linkContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5em;
+    min-height: 3em;
+    flex-wrap: wrap;
+}
+
+.copyright {
+    color: white;
+}

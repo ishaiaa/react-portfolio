@@ -13,7 +13,7 @@ function AboutMe(props) {
     const title = "About Me"
 
     return (
-        <div className={`${styles.mainContainer} ${styles.inverseWidget}`}>
+        <div id={props.useID} className={`${styles.mainContainer} ${styles.inverseWidget}`}>
             <div  className={styles.widgetContainer}>
                 <Fade duration={1500} delay={100}>
                     <SkillSphere />
