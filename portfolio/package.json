@@ -1,11 +1,13 @@
 {
   "name": "empty-react-project",
   "version": "0.1.0",
+  "homepage": "https://zongii.github.io/",
   "private": true,
   "dependencies": {
     "@react-spring/parallax": "^9.5.2",
     "@trendyol-js/react-carousel": "^3.0.0",
     "dummy-component": "git+https://github.com/recraftrelic/dummy-react-npm-module.git",
+    "gh-pages": "^4.0.0",
     "infinite-react-carousel": "^1.2.11",
     "react": "^16.14.0",
     "react-device-detect": "^2.2.2",
@@ -22,6 +24,8 @@
     "TagCloud": "^2.2.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

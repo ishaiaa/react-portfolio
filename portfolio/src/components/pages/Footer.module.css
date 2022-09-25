@@ -19,12 +19,6 @@
     animation: offset 20s infinite alternate;
 }
 
-@keyframes offset {
-    100% {
-        background-position: 1000px 0;
-        mask-position: 1000px 0;
-    }
-}
 
 .content {
     min-height: 300px;
@@ -57,4 +51,18 @@
 
 .copyright {
     color: white;
+}
+
+@keyframes offset {
+    100% {
+        background-position: 1000px 0;
+        mask-position: 1000px 0;
+    }
+}
+
+@supports ( -moz-appearance:none ){
+    .wave {
+        animation: none !important;
+        transition: 0s !important;
+    }
 }

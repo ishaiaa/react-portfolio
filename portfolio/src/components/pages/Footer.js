@@ -5,10 +5,10 @@ import wave from '../../images/landscape/wave-footer.svg'
 
 import LinkIcon from '../reusables/LinkIcon';
 
-import github from '../../images/guthub-transparent.png'
-import linkedin from '../../images/linkedin-tranparent.png'
-import discord from '../../images/discord-transparent.png'
-import mail from '../../images/mail-transparent.png'
+import github from '../../images/icons/guthub-transparent.png'
+import linkedin from '../../images/icons/linkedin-tranparent.png'
+import discord from '../../images/icons/discord-transparent.png'
+import mail from '../../images/icons/mail-transparent.png'
 
 function Footer(props) {
     return (

@@ -49,3 +49,10 @@
         mask-position: 1000px 0;
     }
 }
+
+@supports ( -moz-appearance:none ){
+    .offset {
+        animation: none !important;
+        transition: 0s !important;
+    }
+}

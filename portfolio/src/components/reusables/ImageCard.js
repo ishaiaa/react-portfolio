@@ -2,8 +2,8 @@ import React from "react";
 
 import styles from "./ImageCard.module.css"
 
-import githubIcon           from "../../images/github.svg"
-import linkIcon             from "../../images/link.png"
+import githubIcon           from "../../images/icons/github.svg"
+import linkIcon             from "../../images/icons/link.png"
 
 function ImageCard(props) {
 
@@ -11,7 +11,7 @@ function ImageCard(props) {
         <div className={styles.card}>
             <div className={styles.cardHeader}>
                 <img className={styles.cardImage} src={props.image} alt="Company Icon" />
-                <a className={styles.cardLink} target="_blank" href={props.link}>
+                <a className={styles.cardLink} target="_blank" rel="noreferrer" href={props.link}>
                     <img src={props.git ? githubIcon : linkIcon} alt="link" />
                 </a>
             </div>

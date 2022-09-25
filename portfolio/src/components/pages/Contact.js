@@ -14,10 +14,10 @@ import { toast } from "react-toastify";
 
 import { Fade } from "react-reveal";
 
-import discordIcon from  "../../images/discord.png"
-import linkedinIcon from  "../../images/linkedin.png"
-import githubIcon from  "../../images/github.png"
-import emailIcon from  "../../images/email.png"
+import discordIcon from  "../../images/icons/discord.png"
+import linkedinIcon from  "../../images/icons/linkedin.png"
+import githubIcon from  "../../images/icons/github.png"
+import emailIcon from  "../../images/icons/email.png"
 import { useState } from "react";
 
 function Contact(props) {
@@ -93,7 +93,7 @@ function Contact(props) {
 
         
 
-        if(Math.floor(Math.random() + 0.5)) {
+        if(1) {
             toast.error(`An internal error occured!`, {
                 position: "bottom-right",
                 autoClose: 5000,
@@ -106,18 +106,18 @@ function Contact(props) {
             });
         }
 
-        else {
-            toast.success(`Message sent successfully!`, {
-                position: "bottom-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "dark"
-            });
-        }
+        // else {
+        //     toast.success(`Message sent successfully!`, {
+        //         position: "bottom-right",
+        //         autoClose: 5000,
+        //         hideProgressBar: false,
+        //         closeOnClick: true,
+        //         pauseOnHover: true,
+        //         draggable: true,
+        //         progress: undefined,
+        //         theme: "dark"
+        //     });
+        // }
 
         function missing(text) {
             toast.warning(`You havent specified ${text}!`, {

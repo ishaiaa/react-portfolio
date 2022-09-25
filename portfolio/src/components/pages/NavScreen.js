@@ -5,15 +5,13 @@ import styles from "./NavScreen.module.css"
 
 import LinkIcon from '../reusables/LinkIcon';
 
-import github from '../../images/guthub-transparent.png'
-import linkedin from '../../images/linkedin-tranparent.png'
-import discord from '../../images/discord-transparent.png'
-import mail from '../../images/mail-transparent.png'
+import github from '../../images/icons/guthub-transparent.png'
+import linkedin from '../../images/icons/linkedin-tranparent.png'
+import discord from '../../images/icons/discord-transparent.png'
+import mail from '../../images/icons/mail-transparent.png'
 
 
 function NavScreen(props) {
-
-    const isOn = props.on;
 
     useEffect(() => {
         // The debounce function receives our function as a parameter

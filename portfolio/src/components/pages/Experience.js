@@ -8,8 +8,8 @@ import Card from '../reusables/Card'
 
 import Bounce from 'react-reveal/Bounce'
 
-import pfeIcon from '../../images/pfe.png'
-import freelanceIcon from '../../images/freelancing.png'
+import pfeIcon from '../../images/icons/pfe.png'
+import freelanceIcon from '../../images/icons/freelancing.png'
 
 function Experience(props) {
     const title = "My Experience"

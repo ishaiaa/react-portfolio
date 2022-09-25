@@ -3,8 +3,8 @@ import Sound from 'react-sound'
 
 
 import styles from "./Navbar.module.css";
-import logo from "../../images/moon1.svg"
-import musicNote from "../../images/music-note.svg"
+import logo from "../../images/icons/moon1.svg"
+import musicNote from "../../images/icons/music-note.svg"
 
 import music from "../../media/music.wav"
 

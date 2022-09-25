@@ -14,10 +14,15 @@ import unityIcon            from "../../images/techIcons/unity.svg"
 import nodejsIcon           from "../../images/techIcons/nodejs.svg"
 import csharpIcon           from "../../images/techIcons/csharp.svg"
 import toolsIcon            from "../../images/techIcons/tools.svg"
+import serverIcon            from "../../images/techIcons/server.png"
 
 import Fade                 from "react-reveal/Fade"
 
-import gateway              from "../../images/gateway.png"
+import gateway              from "../../images/projects/gateway.png"
+import portfolio            from "../../images/projects/portfolio.png"
+import spookyevent          from "../../images/projects/marvo-spookyevent.jpg"
+import survivalgames        from "../../images/projects/marvo-sg.png"
+import bedwars              from "../../images/projects/marvo-bedwars.png"
 
 function Projects(props) {
     const icons = [reactIcon, htmlIcon, cssIcon, javascriptIcon, unityIcon, nodejsIcon, csharpIcon, toolsIcon]
@@ -66,57 +71,83 @@ function Projects(props) {
                             git={false}
                         />
                         <ImageCard 
-                            image="https://picsum.photos/500/500?random=1"
-                            title="Example Title"
-                            description={"Nisi cupidatat duis exercitation non enim ipsum ipsum tempor adipisicing nostrud sit."}
-                            icons={[icons[0], icons[4], icons[2], icons[1]]}
-                            link="https://zongi.dev/gateway-build"
+                            image={portfolio}
+                            title="My Portfolio"
+                            description={"My personal website. You're currently on it."}
+                            icons={[reactIcon, htmlIcon, cssIcon, javascriptIcon, toolsIcon]}
+                            link="https://github.com/zongii/react-portfolio"
                             git={true}
                         />
                         <ImageCard 
-                            image="https://picsum.photos/500/500?random=2"
-                            title="Example Title"
-                            description={"Nisi cupidatat duis exercitation non enim ipsum ipsum tempor adipisicing nostrud sit."}
-                            icons={[icons[4], icons[5], icons[6], icons[7]]}
-                            link="https://zongi.dev/gateway-build"
+                            image={survivalgames}
+                            title="Marvo SurvivalGames"
+                            description={"Event organised as part of Marvo Cup. I was responsible for entire server infrastructure"}
+                            icons={[toolsIcon, serverIcon, javascriptIcon]}
+                            link="https://www.facebook.com/MARVOpl/photos/pb.100063669276250.-2207520000../544632693551398/?type=3"
                             git={false}
 
                         />
                         <ImageCard 
-                            image="https://picsum.photos/500/500?random=3"
-                            title="Example Title"
-                            description={"Nisi cupidatat duis exercitation non enim ipsum ipsum tempor adipisicing nostrud sit."}
-                            icons={[icons[3], icons[5], icons[1]]}
-                            link="https://zongi.dev/gateway-build"
+                            image={spookyevent}
+                            title="Marvo SpookyEvent"
+                            description={"Event organised by Marvo. I was one of two developers responsible for the project"}
+                            icons={[toolsIcon, serverIcon, javascriptIcon]}
+                            link="https://www.facebook.com/MARVOpl/photos/pb.100063669276250.-2207520000../603278537686813/?type=3"
                             git={false}
 
                         />
                         <ImageCard 
-                            image="https://picsum.photos/500/500?random=4"
-                            title="Example Title"
-                            description={"Nisi cupidatat duis exercitation non enim ipsum ipsum tempor adipisicing nostrud sit."}
-                            icons={[icons[3], icons[6]]}
-                            link="https://zongi.dev/gateway-build"
-                            git={true}
+                            image={bedwars}
+                            title="Marvo Bedwars"
+                            description={"Event organised as part of Marvo Cup. I was one of two developers responsible for the project"}
+                            icons={[toolsIcon, serverIcon, javascriptIcon]}
+                            link="https://www.facebook.com/photo.php?fbid=444235064375466&set=pb.100063669276250.-2207520000..&type=3"
+                            git={false}
 
                         />
                         <ImageCard 
-                            image="https://picsum.photos/500/500?random=5"
-                            title="Example Title"
-                            description={"Nisi cupidatat duis exercitation non enim ipsum ipsum tempor adipisicing nostrud sit."}
-                            icons={[icons[4], icons[2], icons[0]]}
-                            link="https://zongi.dev/gateway-build"
-                            git={true}
-
-                        /> 
-                        <ImageCard 
-                            image="https://picsum.photos/500/500?random=6"
-                            title="Example Title"
-                            description={"Nisi cupidatat duis exercitation non enim ipsum ipsum tempor adipisicing nostrud sit."}
-                            icons={[icons[1], icons[4], icons[5], icons[7]]}
+                            image={gateway}
+                            title="Gate-Way"
+                            description={"Gate-Way is a puzzle game, created by two passionate developers. Nominated to the final of GEEK 2022 contest."}
+                            icons={[unityIcon , csharpIcon, toolsIcon ]}
                             link="https://zongi.dev/gateway-build"
                             git={false}
-                        /> 
+                        />
+                        <ImageCard 
+                            image={portfolio}
+                            title="My Portfolio"
+                            description={"My personal website. You're currently on it."}
+                            icons={[reactIcon, htmlIcon, cssIcon, javascriptIcon, toolsIcon]}
+                            link="https://github.com/zongii/react-portfolio"
+                            git={true}
+                        />
+                        <ImageCard 
+                            image={survivalgames}
+                            title="Marvo SurvivalGames"
+                            description={"Event organised as part of Marvo Cup. I was responsible for entire server infrastructure"}
+                            icons={[toolsIcon, serverIcon, javascriptIcon]}
+                            link="https://www.facebook.com/MARVOpl/photos/pb.100063669276250.-2207520000../544632693551398/?type=3"
+                            git={false}
+
+                        />
+                        <ImageCard 
+                            image={spookyevent}
+                            title="Marvo SpookyEvent"
+                            description={"Event organised by Marvo. I was one of two developers responsible for the project"}
+                            icons={[toolsIcon, serverIcon, javascriptIcon]}
+                            link="https://www.facebook.com/MARVOpl/photos/pb.100063669276250.-2207520000../603278537686813/?type=3"
+                            git={false}
+
+                        />
+                        <ImageCard 
+                            image={bedwars}
+                            title="Marvo Bedwars"
+                            description={"Event organised as part of Marvo Cup. I was one of two developers responsible for the project"}
+                            icons={[toolsIcon, serverIcon, javascriptIcon]}
+                            link="https://www.facebook.com/photo.php?fbid=444235064375466&set=pb.100063669276250.-2207520000..&type=3"
+                            git={false}
+
+                        />
                     </Slider>
                 </Fade>
                 
@@ -126,18 +157,3 @@ function Projects(props) {
 }
 
 export default Projects
-
-{/*                
-
-
-
-                    <img className={styles.card} src={gateway } alt="pfe" />
-                    <img className={styles.card} src={gateway } alt="pfe" />
-                    <img className={styles.card} src={gateway } alt="pfe" />
-                    <img className={styles.card} src={gateway } alt="pfe" />
-                    <img className={styles.card} src={gateway } alt="pfe" />
-                    <img className={styles.card} src={gateway } alt="pfe" />
-                    <img className={styles.card} src={gateway } alt="pfe" />
-                    <img className={styles.card} src={gateway } alt="pfe" />
-                
-*/}

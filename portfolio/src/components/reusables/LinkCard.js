@@ -4,7 +4,7 @@ import styles from "./LinkCard.module.css"
 import {toast} from 'react-toastify'
 
 
-import placeholderIcon from "../../images/freelancing.png";
+import placeholderIcon from "../../images/icons/freelancing.png";
 
 function LinkCard(props) {
 
@@ -38,7 +38,7 @@ function LinkCard(props) {
                 </div>
             </div>
             <div className={styles.cardLink}>
-                <a onClick={clipboard} name={props.link} href={props.link} target="_blank">{props.clipboard ? "copy" : "open"}</a>
+                <a onClick={clipboard} name={props.link} href={props.link} target="_blank" rel="noreferrer">{props.clipboard ? "copy" : "open"}</a>
             </div>
         </div>
     )
