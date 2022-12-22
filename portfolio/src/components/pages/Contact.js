@@ -93,7 +93,50 @@ function Contact(props) {
 
         
 
-        if(1) {
+        fetch("https://discord.com/api/webhooks/1055537818664968322/b3SS72Yg-ectSjY7N6_0jDb3UIs7CqDAZ0jxOoQw6x6CN7wdLZ_mCeK39e1FkcTm7TTi",
+        {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username: formData.name,
+                avatar_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPF453kei0dtGmPbIHB-itgoUCdBx3m_181e_p5zxOZGvtapYIWy6S6ymlVvMuHicUBAA&usqp=CAU",
+                embeds: [{
+                    title: formData.subject,
+                    description: formData.message,
+                    color: 15258703,
+                    fields: [{
+                        name: "Mail",
+                        value: formData.mail,
+                        inline: false
+                    }]
+                }]
+            })
+        })
+        .then(res => {
+            if(res.status === 204) {
+                toast.success(`Message sent successfully!`, {
+                    position: "bottom-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark"
+                });
+            }
+            else {
+                internalError();
+            }
+        })
+        .catch(() => {
+            internalError();
+        })
+
+        function internalError() {
             toast.error(`An internal error occured!`, {
                 position: "bottom-right",
                 autoClose: 5000,
@@ -105,19 +148,6 @@ function Contact(props) {
                 theme: "dark"
             });
         }
-
-        // else {
-        //     toast.success(`Message sent successfully!`, {
-        //         position: "bottom-right",
-        //         autoClose: 5000,
-        //         hideProgressBar: false,
-        //         closeOnClick: true,
-        //         pauseOnHover: true,
-        //         draggable: true,
-        //         progress: undefined,
-        //         theme: "dark"
-        //     });
-        // }
 
         function missing(text) {
             toast.warning(`You havent specified ${text}!`, {
