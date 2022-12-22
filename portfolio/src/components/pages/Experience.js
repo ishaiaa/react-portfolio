@@ -28,59 +28,32 @@ function Experience(props) {
             </div>
         
             <div  className={styles.widgetContainer}>
-                
-                <SkillBar
-                    title={"HTML"}
-                    progress={90}
-                    color={"#e67410"}
-                />
-                <SkillBar
-                    title={"CSS"}
-                    progress={85}
-                    color={"#e6db10"}
-                />
-                <SkillBar
-                    title={"JavaScript"}
-                    progress={65}
-                    color={"#10e646"}
-                />
-                <SkillBar
-                    title={"ReactJS"}
-                    progress={50}
-                    color={"#1034e6"}
-                />
-                <SkillBar
-                    title={"ExpressJS"}
-                    progress={45}
-                    color={"#6510e6"}
-                />
-                <SkillBar
-                    title={"NodeJS"}
-                    progress={40}
-                    color={"#c71c71"}
-                />
+                {props.skillBarsData !== null && props.skillBarsData.map((element, index) => {
+                    if(index < 7) return (
+                        <SkillBar
+                            title={element.name}
+                            progress={element.level}
+                            color={element.color}
+                        />
+                    )
+                    return (<></>)
+                })}
 
                 <div className={cardStyles.cardContainer} >
-                    <Bounce>
-                        <Card 
-                            icon={freelanceIcon}
-                            title={"Freelancing"}
-                            company={""}
-                            timespan={"Now"}
-                            description={"I create responsive websites for desktop and mobile. I work with Frontend and Backend frameworks in order to deliver best quality products"}
-                        />
-                    </Bounce>
-                    <Bounce delay={500}>
-                        <Card 
-                            icon={pfeIcon}
-                            title={"Technician and Backend developer"}
-                            company={"Polska Federacja Esportowa"}
-                            timespan={"May 2021 - September 2022"}
-                            description={"PFE is a legal foundation that with esports. We carry out events / projects / orders for companies and more!"}
-                        />
-                    </Bounce>
-                    
-                    
+                {props.workplacesData !== null && props.workplacesData.map((element, index) => {
+                    if(index < 2) return (
+                        <Bounce delay={index*500}>
+                            <Card 
+                                icon={element.icon}
+                                title={element.title}
+                                company={element.company}
+                                timespan={element.timespan}
+                                description={element.description}
+                            />
+                        </Bounce>
+                    )
+                    return (<></>)
+                })}
                 </div>
             </div>
         </div>

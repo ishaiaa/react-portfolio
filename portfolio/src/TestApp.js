@@ -7,6 +7,7 @@ import PageLayer from './components/reusables/PageLayer';
 import { ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
+import {data} from "./defaultData";
 
 import Navbar from './components/pages/Navbar';
 import Banner from './components/pages/Banner';
@@ -18,16 +19,58 @@ import Contact from './components/pages/Contact';
 import Footer from './components/pages/Footer';
 
 import { useEffect } from 'react';
+import { useState } from 'react';
+import SkillSphere from './components/reusables/SkillSphere';
 
 function TestApp(props) {
 
+  const [skillData, setSkillSphere] = useState(null);
+  const [skillBars, setSkillBars] = useState(null);
+  const [workplaces, setWorkplaces] = useState(null);
+  const [projects, setProjects] = useState(null);
+
+
+  useEffect(() => {
+    fetch('https://raw.githubusercontent.com/zongii/datasets/main/portfolio/skills.json')
+    .then(response => response.json())
+    .then(res => {
+        if(res.skill_cloud) {
+          console.log(res)
+          setSkillSphere(res.skill_cloud)
+          setSkillBars(res.skill_bars)
+          return
+        }
+        setSkillSphere(data.skill_cloud)
+        setSkillBars(data.skill_bars)
+      })
+      .catch(() => {
+        setSkillSphere(data.skill_cloud)
+        setSkillBars(data.skill_bars)
+      })
+
+      fetch('https://raw.githubusercontent.com/zongii/datasets/main/portfolio/work.json')
+      .then(response => response.json())
+      .then(res => {
+          if(res.workplaces) {
+            console.log(res)
+            setWorkplaces(res.workplaces)
+            setProjects(res.projects)
+            return
+          }
+          setWorkplaces(data.workplaces)
+          setProjects(data.projects)
+        })
+        .catch(() => {
+          setWorkplaces(data.workplaces)
+          setProjects(data.projects)
+        })
+  }, [])
   useEffect(() => {
     window.addEventListener('load', function () {
       props.loadingScreen.className = "nodisplay"
       document.body.className = ""
-    })
-      
-  })
+    })  
+  }, [])
 
 
   return (
@@ -47,7 +90,7 @@ function TestApp(props) {
           accent="#274187"
           wave={0}
         >
-          <AboutMe useID="about" className={styles.absolute}/>
+          <AboutMe useID="about" className={styles.absolute} skillSphereData={skillData}/>
         </PageLayer>
         <PageLayer
           className={styles.pageContainer2}
@@ -58,7 +101,7 @@ function TestApp(props) {
           wave={1} 
           
         >
-          <Experience useID="experience" className={styles.absolute}/>
+          <Experience useID="experience" className={styles.absolute} skillBarsData={skillBars} workplacesData={workplaces}/>
 
         </PageLayer>
         <PageLayer 
@@ -69,7 +112,7 @@ function TestApp(props) {
           accent="#274187"
           wave={1}
         >
-          <Projects useID="projects" className={styles.absolute}/>
+          <Projects useID="projects" className={styles.absolute} projectsData={projects}/>
         </PageLayer>
         <PageLayer 
           className={styles.pageContainer2}

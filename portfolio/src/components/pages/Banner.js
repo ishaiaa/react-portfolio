@@ -38,19 +38,22 @@ function Banner(props) {
           <div className={styles.sky} style={{background: 'linear-gradient(to bottom, rgb(47, 70, 139) 0%, rgb(93, 121, 189) 100%)'}}>
           </div>
         </div>
-        <Parallax translateY={[-40, 40]} className={styles.parallax}>
+        <Parallax translateY={[-80, 80]} className={styles.parallax}>
           <div className={styles.layer} style={{'--backgroundImage': `url(${bannerImages.landscape.image1})`}} />
         </Parallax>
-        <Parallax translateY={[-30, 30]} className={styles.parallax}>
+        <Parallax translateY={[-60, 60]} className={styles.parallax}>
           <div className={styles.layer} style={{'--backgroundImage': `url(${bannerImages.landscape.image2})`}} />
         </Parallax>
-        <Parallax translateY={[-20, 20]} className={styles.parallax}>
+        
+        <Parallax translateY={[-40, 40]} className={styles.parallax}>
           <div className={styles.layer} style={{'--backgroundImage': `url(${bannerImages.landscape.image3})`}} />
         </Parallax>
+
+        
         <Parallax translateY={[-10, 10]} className={`${styles.mouseOver} ${styles.parallax}`}>
           <div className={styles.layer} style={{'--backgroundImage': `url(${bannerImages.landscape.image4})`}} />
         </Parallax>
-        <Parallax translateY={[-15, 15]} className={styles.parallax}>
+        <Parallax translateY={[-30, 30]} className={styles.parallax}>
           <div className={styles.title} style={{'--backgroundImage': `url(${bannerImages.landscape.image3})`}} >
             <h3 className="bouncingLetters">
               <BouncyText text={title.greeting} animationOffset={0} />

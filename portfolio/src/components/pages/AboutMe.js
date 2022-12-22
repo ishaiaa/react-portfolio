@@ -11,12 +11,13 @@ import SkillSphere from "../reusables/SkillSphere";
 function AboutMe(props) {
 
     const title = "About Me"
+    console.log(props.skillSphereData)
 
     return (
         <div id={props.useID} className={`${styles.mainContainer} ${styles.inverseWidget}`}>
             <div  className={styles.widgetContainer}>
                 <Fade duration={1500} delay={100}>
-                    <SkillSphere />
+                    {props.skillSphereData !== null && <SkillSphere skillList={props.skillSphereData}/>}
                 </Fade>
                 
             </div>

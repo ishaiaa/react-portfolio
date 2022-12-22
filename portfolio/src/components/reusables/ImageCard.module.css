@@ -105,6 +105,27 @@
     border-radius: 5px;
     flex: 0;
     margin-right: 10px;
+    position: relative;
+}
+
+.tooltip {
+    background-color: rgb(38, 39, 61);
+    color: rgba(255, 255, 255, 0.596);
+    padding: 3px 3px;
+    width: fit-content;
+    border-radius: 5px;
+    flex: 0;
+    position: absolute;
+    bottom: 2em;
+    opacity: 0;
+    left: 0px;
+    transition: 0.2s;
+    pointer-events: none;
+}
+
+.cardIcon:hover > .tooltip {
+    opacity: 1;
+    transition: 0.2s;
 }
 
 .cardIcon img {

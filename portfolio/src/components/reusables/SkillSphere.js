@@ -3,11 +3,7 @@ import React, {useEffect, useState, useRef} from "react";
 function SkillSphere(props) {
     const TagCloud = require('TagCloud');
     const container = '.tagcloud';
-    const texts = [
-        'JavaScript', 'CSS3', 'HTML5', 'ReactJS',
-        'SQL', 'npm', 'Git', 'NodeJS', 'ExpressJS',
-        'PHP', 'MongoDB', 'MySQL', 'jQuery', 'Bootstrap'
-    ];
+    const texts = props.skillList;
 
     const [options, setOptions] = useState({
         radius: window.innerWidth > 1100 ? (window.innerWidth / 5) : (window.innerWidth / 3),
