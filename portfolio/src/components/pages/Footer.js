@@ -52,7 +52,7 @@ function Footer(props) {
                         clipboard
                         icon={mail}
                         alt="Copy mail address"
-                        link="contact@zongi.dev" 
+                        link="contact.sebastian.golba@gmail.com" 
                     />
                 </div>
                 <p className={styles.copyright}>

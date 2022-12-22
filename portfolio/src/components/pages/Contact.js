@@ -232,8 +232,8 @@ function Contact(props) {
                                 <LinkCard 
                                     icon={emailIcon}
                                     title="Mail"
-                                    description="contact@zongi.dev"
-                                    link="contact@zongi.dev"
+                                    description="contact.sebastian.golba@gmail.com"
+                                    link="contact.sebastian.golba@gmail.com"
                                     clipboard={true}
                                 />
                             </div>
