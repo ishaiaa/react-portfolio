@@ -13,9 +13,7 @@ function PageLayer(props) {
         wave:       darkWave,
         waveBlue:   darkWaveBlue
     }
-
-    console.log(props.children)
-  
+      
     return (
     <div className={styles.mainContainer}>
 

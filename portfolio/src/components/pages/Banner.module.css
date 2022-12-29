@@ -18,14 +18,6 @@
     width: 100%;
 }
 
-.stars {
-    position: absolute;
-    height: 100vh;
-    width: 100%;
-    background-repeat: repeat;
-    background-size: 100vh;
-}
-
 .mouseOver {
     pointer-events: none;
 }
@@ -92,6 +84,63 @@
 
 }
 
+
+
+.stars {
+    position: absolute;
+    top: 0;
+    width: 200vw;
+    height: 100vh;
+    transform: translate(0%, 0%);
+    background-size: contain;
+    background-repeat: repeat;
+    transform-origin: top left;
+}
+  
+.starsL {
+    background-image: url("../../images/landscape/stars-L.svg");
+    background-size: 890px;
+    height: 750px;
+    animation: panning-stars 180s linear infinite alternate;
+}
+  
+.starsM {
+    background-image: url("../../images/landscape/stars-M.svg");
+    height: 530px;
+    animation: panning-stars 160s linear infinite alternate;
+}
+  
+.starsS {
+    background-image: url("../../images/landscape/stars-S.svg");
+    height: 370px;
+    animation: panning-stars 200s linear infinite alternate;
+}
+
+.clouds1 {
+    opacity: 0.4;
+    background-image: url("../../images/landscape/clouds1.svg");
+    background-size: auto 100vh;
+    animation: moving-clouds 100s linear infinite alternate;
+}
+
+  
+@keyframes panning-stars {
+    from {
+        background-position: 0vh 0vh;
+    }
+    to {
+        background-position: 80vh 40vh;
+    }
+}
+
+@keyframes moving-clouds {
+    from {
+        background-position: 0vh;
+    }
+    to {
+        background-position: 100vh;
+    }
+}
 
 @media screen and (max-width: 400px) {
     .title {

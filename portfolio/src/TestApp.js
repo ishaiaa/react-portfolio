@@ -21,6 +21,7 @@ import Footer from './components/pages/Footer';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import SkillSphere from './components/reusables/SkillSphere';
+import { isWindows } from 'react-device-detect';
 
 function TestApp(props) {
 
@@ -36,7 +37,6 @@ function TestApp(props) {
     .then(response => response.json())
     .then(res => {
         if(res.skill_cloud) {
-          console.log(res)
           setSkillSphere(res.skill_cloud)
           setSkillBars(res.skill_bars)
           return
@@ -53,7 +53,6 @@ function TestApp(props) {
       .then(response => response.json())
       .then(res => {
           if(res.workplaces) {
-            console.log(res)
             setWorkplaces(res.workplaces)
             setProjects(res.projects)
             setContact(res.contact_string)
@@ -73,6 +72,8 @@ function TestApp(props) {
     window.addEventListener('load', function () {
       props.loadingScreen.className = "nodisplay"
       document.body.className = ""
+
+      window.removeEventListener('load', window);
     })  
   }, [])
 

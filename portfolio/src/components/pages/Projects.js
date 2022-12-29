@@ -19,12 +19,6 @@ import serverIcon            from "../../images/techIcons/server.png"
 
 import Fade                 from "react-reveal/Fade"
 
-import gateway              from "../../images/projects/gateway.png"
-import portfolio            from "../../images/projects/portfolio.png"
-import spookyevent          from "../../images/projects/marvo-spookyevent.jpg"
-import jaskolka             from "../../images/projects/jaskolka.png"
-import bedwars              from "../../images/projects/marvo-bedwars.png"
-
 const iconSet = {
         react:       {icon: reactIcon,          tooltip: "ReactJS"},    
         reactnative: {icon: reactNativeIcon,    tooltip: "React Native"},  
@@ -44,7 +38,7 @@ function Projects(props) {
     const [options, setOptions] = useState({
         autoplay: false,
         centerMode: true,
-        dots: true,
+        dots: false,
         slidesToShow: window.innerWidth / 336,
         centerPadding: 0,
         adaptiveHeight: true,
@@ -74,9 +68,11 @@ function Projects(props) {
             <div className={styles.carouselContainer}>
                 {props.projectsData !== null && <Fade bottom>
                     <Slider { ...options }>
+
                         {props.projectsData.map((element, index) => {
                             return (
                                 <ImageCard 
+                                    key={index}
                                     image={element.image}
                                     title={element.title}
                                     description={element.description}
@@ -92,6 +88,7 @@ function Projects(props) {
                         {props.projectsData.map((element, index) => {
                             return (
                                 <ImageCard 
+                                    key={props.projectsData.length + index}
                                     image={element.image}
                                     title={element.title}
                                     description={element.description}

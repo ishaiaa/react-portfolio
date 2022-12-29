@@ -8,9 +8,6 @@ import Card from '../reusables/Card'
 
 import Bounce from 'react-reveal/Bounce'
 
-import pfeIcon from '../../images/icons/pfe.png'
-import freelanceIcon from '../../images/icons/freelancing.png'
-
 function Experience(props) {
     const title = "My Experience"
 
@@ -31,6 +28,7 @@ function Experience(props) {
                 {props.skillBarsData !== null && props.skillBarsData.map((element, index) => {
                     if(index < 7) return (
                         <SkillBar
+                            key={index}
                             title={element.name}
                             progress={element.level}
                             color={element.color}
@@ -42,7 +40,7 @@ function Experience(props) {
                 <div className={cardStyles.cardContainer} >
                 {props.workplacesData !== null && props.workplacesData.map((element, index) => {
                     if(index < 2) return (
-                        <Bounce delay={index*500}>
+                        <Bounce key={index} delay={index*500}>
                             <Card 
                                 icon={element.icon}
                                 title={element.title}

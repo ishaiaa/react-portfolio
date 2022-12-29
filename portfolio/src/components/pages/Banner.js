@@ -36,9 +36,19 @@ function Banner(props) {
     <div id={props.useID} className={styles.page}>
         <div className={styles.mouseOver}>
           <div className={styles.sky} style={{background: 'linear-gradient(to bottom, rgb(47, 70, 139) 0%, rgb(93, 121, 189) 100%)'}}>
+            
           </div>
+          
         </div>
         <Parallax translateY={[-80, 80]} className={styles.parallax}>
+          <div className={styles.sky}>
+            <span className={`${styles.stars} ${styles.starsL}`}></span>
+            <span className={`${styles.stars} ${styles.starsM}`}></span>
+            <span className={`${styles.stars} ${styles.starsS}`}></span>
+
+            <span className={`${styles.stars} ${styles.clouds1}`}></span>
+            <span className={`${styles.stars} ${styles.clouds2}`}></span>
+          </div>
           <div className={styles.layer} style={{'--backgroundImage': `url(${bannerImages.landscape.image1})`}} />
         </Parallax>
         <Parallax translateY={[-60, 60]} className={styles.parallax}>
