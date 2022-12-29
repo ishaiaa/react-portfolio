@@ -23,6 +23,10 @@ import { useState } from "react";
 function Contact(props) {
     const title = "Contact Me"
 
+    function b64_to_utf8(str) {
+        return decodeURIComponent(escape(window.atob(str)));
+    }
+
     const [formData, setFormData] = useState({
         name: "",
         mail: "",
@@ -93,7 +97,7 @@ function Contact(props) {
 
         
 
-        fetch("https://discord.com/api/webhooks/1055537818664968322/b3SS72Yg-ectSjY7N6_0jDb3UIs7CqDAZ0jxOoQw6x6CN7wdLZ_mCeK39e1FkcTm7TTi",
+        fetch(b64_to_utf8(props.contactString),
         {
             method: "POST",
             headers: {

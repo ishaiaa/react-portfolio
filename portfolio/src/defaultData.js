@@ -4,6 +4,8 @@ export const data = {
         "SQL", "npm", "Git", "NodeJS", "ExpressJS",
         "PHP", "MongoDB", "MySQL", "jQuery", "Bootstrap"
     ],
+
+    "contact_string": "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTA1NzY4OTgyODM1NzA1ODYxMC9aLVRtQXlWajFsaFpoeU9WN2pISF9iN1duZlRuenJySmdPcVZ4UzRGblZYc1hJc1JGUXBXQ0pfcW5KY2ZHb3hOMjV0VQ==",
     
     "skill_bars": [
         {

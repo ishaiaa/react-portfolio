@@ -28,6 +28,7 @@ function TestApp(props) {
   const [skillBars, setSkillBars] = useState(null);
   const [workplaces, setWorkplaces] = useState(null);
   const [projects, setProjects] = useState(null);
+  const [contact, setContact] = useState(null)
 
 
   useEffect(() => {
@@ -55,14 +56,17 @@ function TestApp(props) {
             console.log(res)
             setWorkplaces(res.workplaces)
             setProjects(res.projects)
+            setContact(res.contact_string)
             return
           }
           setWorkplaces(data.workplaces)
           setProjects(data.projects)
+          setContact(data.contact_string)
         })
         .catch(() => {
           setWorkplaces(data.workplaces)
           setProjects(data.projects)
+          setContact(data.contact_string)
         })
   }, [])
   useEffect(() => {
@@ -122,7 +126,7 @@ function TestApp(props) {
           accent="#274187"
           wave={0}
         >
-          <Contact useID="contact" className={styles.absolute}/>
+          <Contact useID="contact" contactString={contact} className={styles.absolute}/>
         </PageLayer>
         <ToastContainer
           position="bottom-right"
